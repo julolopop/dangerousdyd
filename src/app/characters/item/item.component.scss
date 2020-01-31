@@ -1,0 +1,27 @@
+.item {
+    background: url('/assets/item.png');
+    max-width: 310px;
+    height: 160px;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    margin: 10px auto;
+    display: flex;
+}
+.name {
+    width: 49%;
+    height: 90%;
+    padding-left: 40px;
+    margin-right: 5px;
+    font-size: 30px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: block;
+    margin-top: 15%;
+}
+img {
+    margin-top: 12%;
+    height: 50%;
+    border-radius: 50%;
+    border: 1px solid lightgray;
+}
