@@ -13,7 +13,6 @@ import { SharedModule } from './shared/shared.module';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireAuthModule } from '@angular/fire/auth';
-import { ServiceWorkerModule } from '@angular/service-worker';
 import { CharactersModule } from './characters/characters.module';
 import { UserModule } from './user/user.module';
 
@@ -33,7 +32,6 @@ import { UserModule } from './user/user.module';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     AngularFireAuthModule,
-    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
   ],
   providers: [],
   bootstrap: [AppComponent]
