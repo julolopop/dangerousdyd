@@ -1,6 +1,17 @@
 
 <nav>
-    <h1>Dangerus D&D</h1>
+    <h1>Dangerous D&D</h1>
+    <br>
+
+    <div>
+        <span >{{'nombre : ' + info.nombre}}</span>
+    </div>
+    <div *ngFor="let key of objectKeys(info.estadistica)">
+        <span >{{key + ' : ' + info.estadistica[key]}}</span>
+    </div>
+    <div *ngFor="let key of objectKeys(info.habilidades)">
+        <span >{{key + ' : ' + trunc((info.estadistica[info.habilidades[key]]-10)/2)}}</span>
+    </div>
 </nav>
 
 

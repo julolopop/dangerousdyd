@@ -8,13 +8,14 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HomePageComponent } from './home-page/home-page.component';
 import { SharedModule } from './shared/shared.module';
-import { UserModule } from './user/user.module';
 
 // Firebase imports
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { ServiceWorkerModule } from '@angular/service-worker';
+import { CharactersModule } from './characters/characters.module';
+import { UserModule } from './user/user.module';
 
 
 @NgModule({
@@ -23,11 +24,12 @@ import { ServiceWorkerModule } from '@angular/service-worker';
     HomePageComponent,
   ],
   imports: [
+    CharactersModule,
+    UserModule,
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     BrowserAnimationsModule,
     SharedModule,
-    UserModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     AngularFireAuthModule,
