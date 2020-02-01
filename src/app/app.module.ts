@@ -13,17 +13,20 @@ import { SharedModule } from './shared/shared.module';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireAuthModule } from '@angular/fire/auth';
-import { CharactersModule } from './characters/characters.module';
 import { UserModule } from './user/user.module';
+import { ComponentsModule } from './components/components.module';
+import { CharactersComponent } from './characters/characters.component';
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HomePageComponent,
+    CharactersComponent
+
   ],
   imports: [
-    CharactersModule,
     UserModule,
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
@@ -32,6 +35,7 @@ import { UserModule } from './user/user.module';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     AngularFireAuthModule,
+    ComponentsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

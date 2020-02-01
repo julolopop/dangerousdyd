@@ -1,0 +1,31 @@
+:host {
+    text-align: left;
+}
+.item {
+    background: url('/assets/boxLong.png');
+    max-width: 310px;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    margin: 10px auto;
+    display: flex;
+}
+.name {
+    width: 80%;
+    margin-left: 15px;
+    font-size: 30px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: block;
+}
+
+.num {
+    text-align: center;
+    width: 20%;
+    margin-right: 15px;
+    font-size: 30px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: block;
+}
