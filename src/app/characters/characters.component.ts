@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { CharacterService } from '../_service/Character.service';
+import { CampaniaService } from '../_service/Campania.service';
+import { CharacterInfoService } from '../_service/CharacterInfo.service';
+import { AngularFireAuth } from '@angular/fire/auth';
 
 @Component({
   selector: 'app-characters',
@@ -9,26 +13,31 @@ import { Router } from '@angular/router';
 export class CharactersComponent implements OnInit {
 
 
-  public characters = [
-    {
-      "id":1,
-      "name":"Sadrag",
-      "img":"https://www.arcade-fighter.com/images/soul-calibur/soul-calibur-lizardman-1.jpg"
-    },
-    {
-      "id":2,
-      "name":"Sadrag 1",
-      "img":"https://www.arcade-fighter.com/images/soul-calibur/soul-calibur-lizardman-1.jpg"
-    }
-  ]
+  public characters = [];
 
-  constructor( public router: Router) { }
+  constructor(
+    public router: Router,
+    public afAuth: AngularFireAuth,
+    private CampaniaService: CampaniaService,
+    private CharacterService: CharacterService,
+    private CharacterInfoService: CharacterInfoService
+  ) { }
 
   ngOnInit() {
+    this.CampaniaService.getCampanas().subscribe(res => {
+      let request: any = res;
+      this.CharacterService.getCharacters(request.campana[0]).subscribe(res => {
+        let request: any = res;
+        this.characters.push(...request.pj);
+      });
+    });
+
   }
 
-  gotoInfo(){
-    this.router.navigate(['/info']);
+  gotoInfo(info) {
+    localStorage.setItem('pj', info.id);
+    this.router.navigate(['/info'], info);
+
   }
 
 }

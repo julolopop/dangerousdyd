@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { AngularFireAuth } from '@angular/fire/auth';
+import { CharacterInfoService } from '../_service/CharacterInfo.service';
 
 @Component({
   selector: 'app-home-page',
@@ -7,44 +10,23 @@ import { Component } from '@angular/core';
 })
 export class HomePageComponent {
   public objectKeys = Object.keys;
-  public info = {
-    "nombre": "sadrag",
-    "estadistica": {
-      "Fuerza": "12",
-      "Destreza": "11",
-      "Constitución": "9",
-      "Inteligencia": "8",
-      "Sabiduría": "10",
-      "Carisma": "10",
-    },
-    "habilidades": {
-      "Acrobacias": "Destreza",
-      "Atletismo": "Fuerza",
-      "C. Arcano": "Inteligencia",
-      "Engaño": "Carisma",
-      "Histori": "Inteligencia",
-      "Interpretación": "Carisma",
-      "Intimidación": "Carisma",
-      "Investigación": "Inteligencia",
-      "Juego de Mano": "Destreza",
-      "Medicina": "Sabiduría",
-      "Naturaleza": "Inteligencia",
-      "Percepció": "Sabiduría",
-      "Perspicacia": "Sabiduría",
-      "Persuasión": "Carisma",
-      "Religión": "Inteligencia",
-      "Sigilo": "Destreza",
-      "Supervivencia": "Sabiduría",
-      "T. con Animale": "Sabiduría",
-    }
+  public info;
+
+  constructor(
+    public router: Router,
+    public afAuth: AngularFireAuth,
+    private characterInfoService: CharacterInfoService,
+  ) {
+
+    this.characterInfoService.getinfoCharacters(localStorage.getItem('pj')).subscribe(res => {
+      this.info = res;
+    });
+
+
   }
 
-  constructor() {
-    
-   }
-
-   trunc(num){
-     return Math.trunc(num);
-   }
+  trunc(num) {
+    return Math.trunc(num);
+  }
 
 }

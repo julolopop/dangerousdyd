@@ -16,9 +16,7 @@ export class LoginPageComponent {
     provider.setCustomParameters({ "prompt": "select_account" });
     this.afAuth.auth.signInWithPopup(provider)
       .then((result) => {
-        let token = result.credential;
-        let user = result.user;
-        console.log(token, user);
+        localStorage.setItem('User',JSON.stringify(result));
         this.router.navigate(['/character']);
       }).catch((error) => {
         window.alert(error)
