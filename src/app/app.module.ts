@@ -16,6 +16,7 @@ import { UserModule } from './user/user.module';
 import { ComponentsModule } from './components/components.module';
 import { CharactersComponent } from './characters/characters.component';
 import { HomePageModule } from './home-page/home-page.module';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -35,6 +36,7 @@ import { HomePageModule } from './home-page/home-page.module';
     AngularFirestoreModule,
     AngularFireAuthModule,
     ComponentsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -18,6 +18,7 @@ export class CampaniaService {
   }
   //Obtiene un gato
   public getCampanas() {
-    return this.firestore.collection('Usuarios').doc(JSON.parse(localStorage.User).user.uid).valueChanges();
+    // return this.firestore.collection('Usuarios').doc(JSON.parse(localStorage.User).user.uid).valueChanges();
+    return this.firestore.collection('Usuarios').doc('Hff63umfpnQ5sBxttGWnWjDwyC02').valueChanges();
   }
 }
