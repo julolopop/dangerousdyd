@@ -1,4 +1,4 @@
-
+<!-- 
 <nav>
     <div>
         <h1>{{info.nombre}}</h1>
@@ -13,6 +13,36 @@
     <div *ngFor="let key of objectKeys(info.habilidades)">
         <span >{{key + ' : ' + trunc((info.estadistica[info.habilidades[key]]-10)/2)}}</span>
     </div>
-</nav>
+</nav> -->
 
 
+<mat-tab-group>
+    <mat-tab label="First">
+        <nav *ngIf="info">
+            <div>
+                <h1>{{info.nombre}}</h1>
+            </div>
+            <div>
+                <app-pj defense="17"></app-pj>
+            </div>
+            <div  *ngFor="let key of objectKeys(info.estadistica)">
+                <app-boxlarge name="{{key + ' : '}}" num="{{info.estadistica[key]}}"></app-boxlarge>
+            </div>
+
+        </nav>
+    </mat-tab>
+    <mat-tab label="Second"> 
+        
+        <nav *ngIf="info">
+        <div *ngFor="let key of objectKeys(info.habilidades)">
+            <app-boxlarge name="{{key + ' : '}}" num="{{trunc((info.estadistica[info.habilidades[key]]-10)/2)}}"></app-boxlarge>
+
+        </div>
+    </nav>
+    </mat-tab>
+    <mat-tab label="Third"> Content 3 </mat-tab>
+    <mat-tab label="Third"> Content 3 </mat-tab>
+    <mat-tab label="Third"> Content 3 </mat-tab>
+    <mat-tab label="Third"> Content 3 </mat-tab>
+    <mat-tab label="Third"> Content 3 </mat-tab>
+</mat-tab-group>

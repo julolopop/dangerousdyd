@@ -17,5 +17,5 @@ export interface Armas {
 export interface Pj {
     nombre: string;
     habilidades: any[];
-    estadisticas: any[];
+    estadistica: any[];
 }

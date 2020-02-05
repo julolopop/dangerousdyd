@@ -6,3 +6,13 @@ nav {
     height: calc(100% - 56px);
     display: block;
 }
+.mat-tab-group {
+    display: flex;
+    flex-direction: column-reverse;
+    height: 100%;
+}
+::ng-deep {
+    .mat-tab-body-wrapper {
+        height: 100%;
+    }
+}

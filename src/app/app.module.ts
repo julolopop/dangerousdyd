@@ -6,7 +6,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 // App Modules
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { HomePageComponent } from './home-page/home-page.component';
 import { SharedModule } from './shared/shared.module';
 
 // Firebase imports
@@ -16,17 +15,17 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { UserModule } from './user/user.module';
 import { ComponentsModule } from './components/components.module';
 import { CharactersComponent } from './characters/characters.component';
+import { HomePageModule } from './home-page/home-page.module';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomePageComponent,
     CharactersComponent
-
   ],
   imports: [
+    HomePageModule,
     UserModule,
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
@@ -35,7 +34,7 @@ import { CharactersComponent } from './characters/characters.component';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     AngularFireAuthModule,
-    ComponentsModule
+    ComponentsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
