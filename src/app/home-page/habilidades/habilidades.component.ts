@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-habilidades',
@@ -6,10 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./habilidades.component.scss']
 })
 export class HabilidadesComponent implements OnInit {
-
+  public objectKeys = Object.keys;
+  @Input() info;
   constructor() { }
 
   ngOnInit() {
   }
 
+  trunc(num) {
+    return Math.trunc(num);
+  }
 }

@@ -1,0 +1,56 @@
+<nav *ngIf="hechizos">
+    <div class="filter">
+        <p class="title">lvl</p>
+        <select #select (change)="filter()">
+            <option value="Cantrip">Cantrip</option>
+            <option value="1st-level">1 level</option>
+            <option value="2nd-level">2 level</option>
+            <option value="3rd-level">3 level</option>
+            <option value="4th-level">4 level</option>
+            <option value="5th-level">5 level</option>
+            <option value="6th-level">6 level</option>
+            <option value="7th-level">7 level</option>
+            <option value="8th-level">8 level</option>
+            <option value="9th-level">9 level</option>
+        </select>
+        
+        <p class="title">name</p>
+        <input type="text" #name (change)="filter()">
+    </div>
+    <mat-accordion>
+        <mat-expansion-panel *ngFor="let key of hechizos">
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    {{key.name}}
+                </mat-panel-title>
+                <mat-panel-description>
+                    {{key.level}} {{key.components}}
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+            <p class="title">name</p>
+            <p>{{key.name}}</p>
+            <p class="title">desc</p>
+            <p>{{key.desc}}</p>
+            <p class="title">range</p>
+            <p>{{key.range}}</p>
+            <p class="title">components</p>
+            <p>{{key.components}}</p>
+            <p class="title">material</p>
+            <p>{{key.material}}</p>
+            <p class="title">ritual</p>
+            <p>{{key.ritual}}</p>
+            <p class="title">duration</p>
+            <p>{{key.duration}}</p>
+            <p class="title">concentration</p>
+            <p>{{key.concentration}}</p>
+            <p class="title">casting time</p>
+            <p>{{key.casting_time}}</p>
+            <p class="title">level</p>
+            <p>{{key.level}}</p>
+            <p class="title">school</p>
+            <p>{{key.school}}</p>
+            <p class="title">class</p>
+            <p>{{key.class}}</p>
+        </mat-expansion-panel>
+    </mat-accordion>
+</nav>

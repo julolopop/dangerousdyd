@@ -11,7 +11,7 @@ export class HechizosService {
   constructor(private http:HttpClient) { }
 
   getHechizos(){
-    return this.http.get<hechizo>('/assets/spells.json').pipe(map(res => 
+    return this.http.get<hechizo[]>('/assets/spells.json').pipe(map(res => 
       {
         return res;
       }));
