@@ -1,25 +1,26 @@
 <mat-tab-group>
-    <mat-tab label="First">
+    <mat-tab label="Estadisticas">
         <nav *ngIf="info">
             <div>
                 <h1>{{info.nombre}}</h1>
             </div>
             <div>
-                <app-pj defense="17"></app-pj>
+                <app-pj [defense]="17" [vida]="32"></app-pj>
             </div>
             <div *ngFor="let key of objectKeys(info.estadistica)">
-                <app-boxlarge name="{{key + ' : '}}" num="{{info.estadistica[key]}}"></app-boxlarge>
+                
+                <app-boxlarge name="{{key + ' : '}}" (click)="openDialog(key)" num="{{info.estadistica[key]}}"></app-boxlarge>
             </div>
 
         </nav>
     </mat-tab>
-    <mat-tab label="Second">
+    <mat-tab label="Habilidades">
         <app-habilidades [info]="info"></app-habilidades>
     </mat-tab>
-    <mat-tab label="Third">
+    <mat-tab label="Hechizos">
         <app-hechizos [info]="info"></app-hechizos>
     </mat-tab>
-    <mat-tab label="Third"> Content 3 </mat-tab>
+    <mat-tab label="Armas"> Content 3 </mat-tab>
     <mat-tab label="Third"> Content 3 </mat-tab>
     <mat-tab label="Third"> Content 3 </mat-tab>
     <mat-tab label="Third"> Content 3 </mat-tab>

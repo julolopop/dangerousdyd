@@ -4,15 +4,22 @@ import { BoxlargeComponent } from './boxlarge/boxlarge.component';
 import { ItemComponent } from './item/item.component';
 import { PjComponent } from './pj/pj.component';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { DialogComponent } from './dialog/dialog.component';
+import { MatDialogModule } from '@angular/material';
 
 
 
 @NgModule({
-  declarations: [BoxlargeComponent,ItemComponent,PjComponent],
+  declarations: [BoxlargeComponent,ItemComponent,PjComponent, DialogComponent],
   imports: [
     CommonModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    MatDialogModule
   ],
-  exports: [BoxlargeComponent,ItemComponent,PjComponent]
+  exports: [BoxlargeComponent,ItemComponent,PjComponent],
+  entryComponents: [
+    DialogComponent
+  ]
+  
 })
 export class ComponentsModule { }

@@ -40,3 +40,19 @@
     width: 100px;
     height: 90px;
 }
+input[type="button"] {
+    border-radius: 35%;
+    margin: 5px;
+    position: relative;
+    top: -4px;
+    background: transparent;
+    color: white;
+    font-size: 20px;
+}
+input[type="button"]:focus {
+    outline: none;
+}
+
+.flex{
+    display: flex;
+}

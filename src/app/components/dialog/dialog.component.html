@@ -1,0 +1,12 @@
+<h1 mat-dialog-title>Hi </h1>
+<div mat-dialog-content>
+  <p>What's your favorite animal?</p>
+
+    <label>Favorite Animal</label>
+    <input matInput [value]="data[0]" [type]="data[1]" #input>
+
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">No Thanks</button>
+  <button mat-button (click)="onClick()">Ok</button>
+</div>
