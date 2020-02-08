@@ -16,6 +16,8 @@ export interface Armas {
 }
 export interface Pj {
     nombre: string;
+    vida:number;
+    defensa:number;
     habilidades: any[];
     estadistica: any[];
 }

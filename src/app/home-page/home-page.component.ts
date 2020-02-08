@@ -29,7 +29,7 @@ export class HomePageComponent {
   openDialog(tipo: string): void {
     const dialogRef = this.dialog.open(DialogComponent, {
       width: '250px',
-      data: [this.info['estadistica'][tipo],'number']
+      data: [this.info['estadistica'][tipo],'number',tipo]
     });
 
     dialogRef.afterClosed().subscribe(result => {

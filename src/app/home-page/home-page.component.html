@@ -5,7 +5,7 @@
                 <h1>{{info.nombre}}</h1>
             </div>
             <div>
-                <app-pj [defense]="17" [vida]="32"></app-pj>
+                <app-pj [defense]="info.defensa" [vida]="info.vida"></app-pj>
             </div>
             <div *ngFor="let key of objectKeys(info.estadistica)">
                 

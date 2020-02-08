@@ -10,28 +10,30 @@ import { MatDialog } from '@angular/material';
 })
 export class PjComponent implements OnInit {
 
-  @Input() defense:number;
-  @Input() vida:number;
-  public vidaA:number;
+  @Input() defense: number;
+  @Input() vida: number;
+  public inputs: number[] =[];
 
-  constructor(public dialog: MatDialog) {}
+  constructor(public dialog: MatDialog) { }
 
-  openDialog(): void {
+  openDialog(input: number, label: string): void {
     const dialogRef = this.dialog.open(DialogComponent, {
       width: '250px',
-      data: this.vida
+      data: [this.inputs[input], "number", label]
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      if(result)
-     this.vida = result;
+      if (result)
+        this.inputs[input] = result;
     });
   }
 
   ngOnInit() {
-    this.vidaA= this.vida;
+    this.inputs[0] = this.vida;
+    this.inputs[1] = this.vida;
+    this.inputs[2] = this.defense;
   }
-  cambioVida(num :number){
-    this.vidaA += num;
+  cambioVida(num: number) {
+    this.inputs[1] += num;
   }
 }

@@ -6,13 +6,13 @@
         </div>
         <div class="flex">
             <input type="button" value="-" (click)="cambioVida(-1)">
-            <span class="heard" (click)="openDialog()">{{vidaA}}/{{vida}}</span>
+            <span class="heard" (click)="openDialog('0','vida Maxima')">{{this.inputs[1]}}/{{this.inputs[0]}}</span>
             <input type="button" value="+" (click)="cambioVida(1)">
         </div>
         <mat-progress-bar mode="determinate" value="{{(vidaA/vida)*100}}" color="warn"></mat-progress-bar>
     </div>
 
     <div class="defense-box">
-        <span class="defense">{{defense}}</span>
+        <span class="defense" (click)="openDialog('2','defensa')">{{this.inputs[2]}}</span>
     </div>
 </div>
