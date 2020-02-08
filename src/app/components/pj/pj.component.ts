@@ -16,7 +16,7 @@ export class PjComponent implements OnInit {
 
   constructor(public dialog: MatDialog) { }
 
-  openDialog(input: number, label: string): void {
+  openDialog(input: string, label: string): void {
     const dialogRef = this.dialog.open(DialogComponent, {
       width: '250px',
       data: [this.inputs[input], "number", label]
