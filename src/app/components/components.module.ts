@@ -6,17 +6,18 @@ import { PjComponent } from './pj/pj.component';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { DialogComponent } from './dialog/dialog.component';
 import { MatDialogModule } from '@angular/material';
+import { BoxshortComponent } from './boxshort/boxshort.component';
 
 
 
 @NgModule({
-  declarations: [BoxlargeComponent,ItemComponent,PjComponent, DialogComponent],
+  declarations: [BoxlargeComponent,BoxshortComponent,ItemComponent,PjComponent, DialogComponent],
   imports: [
     CommonModule,
     MatProgressBarModule,
     MatDialogModule
   ],
-  exports: [BoxlargeComponent,ItemComponent,PjComponent],
+  exports: [BoxlargeComponent,BoxshortComponent,ItemComponent,PjComponent],
   entryComponents: [
     DialogComponent
   ]

@@ -6,6 +6,11 @@ nav {
     height: calc(100% - 56px);
     display: block;
 }
+.flex {
+    display: flex;
+    justify-content: space-around;
+}
+
 .mat-tab-group {
     display: flex;
     flex-direction: column-reverse;

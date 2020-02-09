@@ -1,18 +1,21 @@
 <div class="item">
 
-    <div class="heard-box">
+    <div class="heard-box" *ngFor="let key of objectKeys(barra)">
         <div>
-            <span class="vida">Vida</span>
+            <span class="vida">{{key}}</span>
         </div>
         <div class="flex">
-            <input type="button" value="-" (click)="cambioVida(-1)">
-            <span class="heard" (click)="openDialog('0','vida Maxima')">{{this.inputs[1]}}/{{this.inputs[0]}}</span>
-            <input type="button" value="+" (click)="cambioVida(1)">
+            <input type="button" value="-" (click)="cambioVida(key,-1)">
+            <span class="heard" ><span (click)="openDialog(key,'0')">{{barra[key][0]}}</span>/<span (click)="openDialog(key,'1')">{{barra[key][1]}}</span> </span>
+            <input type="button" value="+" (click)="cambioVida(key,1)">
         </div>
-        <mat-progress-bar mode="determinate" value="{{(this.inputs[1]/this.inputs[0])*100}}" color="warn"></mat-progress-bar>
+        <mat-progress-bar mode="determinate" value="{{(barra[key][0]/barra[key][1])*100}}" [class.vida]="key == 'vida'"
+            [class.mana]="key == 'mana'" [class.experiencia]="key == 'experiencia'">
+        </mat-progress-bar>
     </div>
 
+
     <div class="defense-box">
-        <span class="defense" (click)="openDialog('2','defensa')">{{this.inputs[2]}}</span>
+        <span class="defense"(click)="openDialogD()">{{defensa}}</span>
     </div>
 </div>

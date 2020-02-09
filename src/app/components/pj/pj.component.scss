@@ -4,13 +4,9 @@
 }
 
 .item {
-    display: flex;
-    justify-content: space-between;
     max-width: 290px;
-    height: 100px;
     background-size: contain;
     margin: 10px auto;
-    display: flex;
 }
 
 .vida {
@@ -24,8 +20,9 @@
     color: white;
 }
 .heard-box {
+    display: block;
+    margin: 0 auto;
     text-align: center;
-    width: 55%;
 }
 
 .defense {
@@ -35,6 +32,7 @@
     color: white;
 }
 .defense-box {
+    margin: 10px auto;
     background-image: url('/assets/shield.png');
     background-size: 100% 100%;
     width: 100px;
@@ -55,4 +53,16 @@ input[type="button"]:focus {
 
 .flex{
     display: flex;
+}
+::ng-deep {
+
+    .experiencia .mat-progress-bar-fill::after {
+        background-color: forestgreen;
+    }
+    .vida .mat-progress-bar-fill::after {
+        background-color: red;
+    }
+    .mana .mat-progress-bar-fill::after {
+        background-color: blue;
+    }
 }

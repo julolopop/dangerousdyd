@@ -1,0 +1,35 @@
+:host {
+    text-align: left;
+    width: 100px;
+    padding: 10px;
+}
+.item {
+    width: 100px;
+    height: 100px;
+    background: url('/assets/box.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    margin: 10px auto;
+}
+.name {
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
+    padding: 5px 0px;
+    font-size: 15px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: block;
+}
+
+.num {
+    margin: 0 auto;
+    padding: 5px 0px;
+    text-align: center;
+    font-size: 30px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: block;
+}
