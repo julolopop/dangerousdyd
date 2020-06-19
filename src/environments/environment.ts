@@ -5,13 +5,14 @@
 export const environment = {
   production: false,
   firebase:  {
-    apiKey: "AIzaSyB9mT7AuVCZxtzyWX_8YkvfYgRAtI6wa2c",
-    authDomain: "dangerusdyd.firebaseapp.com",
-    databaseURL: "https://dangerusdyd.firebaseio.com",
-    projectId: "dangerusdyd",
-    storageBucket: "dangerusdyd.appspot.com",
-    messagingSenderId: "718225003372",
-    appId: "1:718225003372:web:d84902c0cbaee3a69e1949"
+    apiKey: "AIzaSyDxBoL9OXfx2T5xPC5iEw2ETHLtIa29FSI",
+    authDomain: "dietapp-56949.firebaseapp.com",
+    databaseURL: "https://dietapp-56949.firebaseio.com",
+    projectId: "dietapp-56949",
+    storageBucket: "dietapp-56949.appspot.com",
+    messagingSenderId: "32234580788",
+    appId: "1:32234580788:web:1d8d0af88b32a011f05361",
+    measurementId: "G-BJ4EX3S5G7"
   }
 };
 
